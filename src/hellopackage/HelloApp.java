@@ -4,119 +4,126 @@ import java.util.Scanner;
 
 public class HelloApp {
 
-    
-    static void Sumof_Set() {
-        int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, -3};
-        int i, sum = 0;
-        for (i = 0; i < arr.length; i++) {
-            sum = sum + arr[i];
+    static void Decimal_Binary() {
+        int num = 10, i = 0;
+        int binaryNum[] = new int[1000];
+        System.out.println("Decimal is: " + num);
+        System.out.print("Binary is: ");
+        while (num > 0) {
+
+            binaryNum[i] = num % 2;
+            num = num / 2;
+
+            i++;
+
         }
-        System.out.print(sum);
+        for (int j = i - 1; j >= 0; j--) {
+            System.out.print(binaryNum[j]);
+        }
+
     }
-    
 
-    static void Fizz_Buzz() {
-
-        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
-        int i;
-        String temp = "";
-        System.out.println("FizzBuzz Twist numbers:");
-
-        for (i = 0; i < a.length; i++) {
-
-            if (a[i] % 3 == 0 && a[i] % 5 != 0) {
-
-                System.out.print("FiZZ" + ",");
-            }
-
-            if (a[i] % 5 == 0 && a[i] % 3 != 0) {
-
-                System.out.print("Buzz" + ",");
-            }
-            if (a[i] % 3 == 0 && a[i] % 5 == 0) {
-
-                System.out.print("FizzBuzz");
-            }
-            if (a[i] % 3 != 0 && a[i] % 5 != 0) {
-                System.out.print(a[i] + ",");
-            }
+    static void Decimal_Octal() {
+        int num = 19, i = 0;
+        int octalNum[] = new int[1000];
+        System.out.println("Decimal is: " + num);
+        System.out.print("Octal is: ");
+        while (num > 0) {
+            octalNum[i] = num % 8;
+            num = num / 8;
+            i++;
+        }
+        for (int j = i - 1; j >= 0; j--) {
+            System.out.print(octalNum[j]);
         }
     }
 
-    
-
-    static void Reverse_String() {
-
-        String str_a = "apple", str_b = "";
-        char ch;
-        int i;
-
-        System.out.print("Original word: ");
-        System.out.println(str_a);
-
-        for (i = 0; i < str_a.length(); i++) {
-            ch = str_a.charAt(i);
-            str_b = ch + str_b;
+    static void Decimal_Hexa() {
+        int num = 0, i = 0;
+        int hexaNum[] = new int[1000];
+        System.out.println("Decimal is: " + num);
+        System.out.print("Hexadecimal is: ");
+        if (num == 0) {
+            System.out.print("0");
         }
-        System.out.println("Reversed word: " + str_b);
-    }
-    
+        while (num > 0) {
+            hexaNum[i] = num % 16;
+            num = num / 16;
+            i++;
 
-    static void Sumof_Digit() {
-        int digit,
-                rem=0,
-                sum = 0,
-                result=0;
-                long number = 9;
+        }
+        for (int j = i - 1; j >= 0; j--) {
+            //System.out.print(hexaNum[j]);
+            if (hexaNum[j] == 10) {
+                System.out.println("A");
 
-        while (number > 0) {
-            digit =(int) (number % 10);
-            
-            System.out.print(Double.MAX_VALUE);
-            
-            number = number / 10;
-            sum = sum + digit;
-            if(sum >10){
-                Sumof_Digit();
-              
+            } else if (hexaNum[j] == 11) {
+                System.out.println("B");
+
+            } else if (hexaNum[j] == 12) {
+                System.out.println("C");
+
+            } else if (hexaNum[j] == 13) {
+                System.out.println("D");
+
+            } else if (hexaNum[j] == 14) {
+                System.out.println("E");
+
+            } else if (hexaNum[j] == 15) {
+                System.out.println("F");
+
+            } else {
+                System.out.print(hexaNum[j]);
             }
-            if(sum<10){
-                //System.out.print(sum);
-                return;
-            }
-          
+
         }
+
+    }
+
+    static void Binary_Decimal() {
+        int num = 1011;
+        int dec_value = 0;
+
+        int base = 1;
+
+        while (num > 0) {
+            int last_digit = num % 10;
+            num = num / 10;
+
+            dec_value += last_digit * base;
+
+            base = base * 2;
+        }
+        System.out.print(dec_value);
+
     }
     
-    static void Factorial(){
-        int a=5;
-        int i,fact=1;
-        for(i=1;i<=a;i++){
-            fact=i*fact;
-            
-           
+    static void Octal_Decimal() {
+        int num = 70;
+        int dec_value = 0;
+
+        int base = 1;
+
+        while (num > 0) {
+            int last_digit = num % 10;
+            num = num / 10;
+
+            dec_value += last_digit * base;
+
+            base = base * 8;
         }
-         System.out.print(fact);
-       
-    }
-    
-    static void Patern(){
-        int i,j,row=5;
-        for(i=0;i<row;i++){
-            for(j=0;j<i;j++){
-                System.out.print(i);
-            }
-            System.out.println();
-        }
+        System.out.print(dec_value);
+
     }
     
     
+
     public static void main(String[] args) {
-        //Sumof_Digit();
-        //Fizz_Buzz();
-        // Reverse_String();
-        Factorial();
-        //Patern();
+        //Decimal_Binary();
+        //Decimal_Octal();
+        //Decimal_Hexa();
+        Octal_Decimal();
+        System.out.println("");
 
     }
 }
