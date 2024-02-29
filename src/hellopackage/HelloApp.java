@@ -97,7 +97,7 @@ public class HelloApp {
         System.out.print(dec_value);
 
     }
-    
+
     static void Octal_Decimal() {
         int num = 70;
         int dec_value = 0;
@@ -115,14 +115,52 @@ public class HelloApp {
         System.out.print(dec_value);
 
     }
+
+    static void Smallest_Factor() {
+        int num = 10;
+        int num_b=15;
+        int temp = 0, max = num;
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
+                temp = i;
+                if (temp < max) {
+                    max = temp;
+
+                }
+
+            }
+
+        }
+        System.out.print("Max=" + max + ",");
+    }
     
-    
+    static void Max_Factorof_Twoint(){
+        int num = 10;
+        int num_b = 15;
+        int temp = 0, max = 0;
+        //System.out.print("Deviser :");
+        for (int i = 2; i < num + num_b; i++) {
+            if (num % i == 0 || num_b % i == 0) {
+                temp = i;
+                  //System.out.print(temp + ","); 
+                if (num % temp == 0 && num_b % temp == 0) {
+                    max = temp;
+                    System.out.println("");
+                    System.out.print("Max=" + max + ",");
+
+                }
+
+            }
+
+        }
+    }
 
     public static void main(String[] args) {
         //Decimal_Binary();
         //Decimal_Octal();
         //Decimal_Hexa();
-        Octal_Decimal();
+        //Smallest_Factor();
+        Max_Factorof_Twoint();
         System.out.println("");
 
     }
