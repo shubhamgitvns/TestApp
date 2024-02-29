@@ -4,137 +4,7 @@ import java.util.Scanner;
 
 public class HelloApp {
 
-    static void Decimal_Binary() {
-        int num = 10, i = 0;
-        int binaryNum[] = new int[1000];
-        System.out.println("Decimal is: " + num);
-        System.out.print("Binary is: ");
-        while (num > 0) {
-
-            binaryNum[i] = num % 2;
-            num = num / 2;
-
-            i++;
-
-        }
-        for (int j = i - 1; j >= 0; j--) {
-            System.out.print(binaryNum[j]);
-        }
-
-    }
-
-    static void Decimal_Octal() {
-        int num = 19, i = 0;
-        int octalNum[] = new int[1000];
-        System.out.println("Decimal is: " + num);
-        System.out.print("Octal is: ");
-        while (num > 0) {
-            octalNum[i] = num % 8;
-            num = num / 8;
-            i++;
-        }
-        for (int j = i - 1; j >= 0; j--) {
-            System.out.print(octalNum[j]);
-        }
-    }
-
-    static void Decimal_Hexa() {
-        int num = 0, i = 0;
-        int hexaNum[] = new int[1000];
-        System.out.println("Decimal is: " + num);
-        System.out.print("Hexadecimal is: ");
-        if (num == 0) {
-            System.out.print("0");
-        }
-        while (num > 0) {
-            hexaNum[i] = num % 16;
-            num = num / 16;
-            i++;
-
-        }
-        for (int j = i - 1; j >= 0; j--) {
-            //System.out.print(hexaNum[j]);
-            if (hexaNum[j] == 10) {
-                System.out.println("A");
-
-            } else if (hexaNum[j] == 11) {
-                System.out.println("B");
-
-            } else if (hexaNum[j] == 12) {
-                System.out.println("C");
-
-            } else if (hexaNum[j] == 13) {
-                System.out.println("D");
-
-            } else if (hexaNum[j] == 14) {
-                System.out.println("E");
-
-            } else if (hexaNum[j] == 15) {
-                System.out.println("F");
-
-            } else {
-                System.out.print(hexaNum[j]);
-            }
-
-        }
-
-    }
-
-    static void Binary_Decimal() {
-        int num = 1011;
-        int dec_value = 0;
-
-        int base = 1;
-
-        while (num > 0) {
-            int last_digit = num % 10;
-            num = num / 10;
-
-            dec_value += last_digit * base;
-
-            base = base * 2;
-        }
-        System.out.print(dec_value);
-
-    }
-
-    static void Octal_Decimal() {
-        int num = 70;
-        int dec_value = 0;
-
-        int base = 1;
-
-        while (num > 0) {
-            int last_digit = num % 10;
-            num = num / 10;
-
-            dec_value += last_digit * base;
-
-            base = base * 8;
-        }
-        System.out.print(dec_value);
-
-    }
-
-    static void Smallest_Factor() {
-        int num = 10;
-        int num_b=15;
-        int temp = 0, max = num;
-        for (int i = 2; i < num; i++) {
-            if (num % i == 0) {
-                temp = i;
-                if (temp < max) {
-                    max = temp;
-
-                }
-
-            }
-
-        }
-        System.out.print("Max=" + max + ",");
-    }
-    
-    static void Max_Factorof_Twoint(){
+    static void Max_Factorof_Twoint() {
         int num = 10;
         int num_b = 15;
         int temp = 0, max = 0;
@@ -142,7 +12,7 @@ public class HelloApp {
         for (int i = 2; i < num + num_b; i++) {
             if (num % i == 0 || num_b % i == 0) {
                 temp = i;
-                  //System.out.print(temp + ","); 
+                //System.out.print(temp + ","); 
                 if (num % temp == 0 && num_b % temp == 0) {
                     max = temp;
                     System.out.println("");
@@ -155,12 +25,55 @@ public class HelloApp {
         }
     }
 
+    static void PrimeNumber() {
+        int num = 4, count = 0, i;
+        if (num <= 1) {
+            System.out.print("This number is not prim");
+            return;
+        }
+        for (i = 1; i <= num / 2; i++) {
+            if (num % i == 0) {
+                count++;
+            }
+        }
+        if (count > 1) {
+            System.out.println(num + " The number is not prime");
+        } else {
+            System.out.println(num + " The number is prime");
+        }
+    }
+
+    static void LargePower() {
+        int x = 5,
+                n = 4,
+                sqt = 1;
+        if (x == 1) {
+            System.out.print(x);
+            return;
+        }
+        for (int i = 1; i <= n; i++) {
+            sqt = sqt * x;
+
+        }
+        System.out.print(sqt);
+
+    }
+    
+    static void FebonacciSerise(){
+        int n=9,fib=0,n1=0,n2=1,n3;
+         System.out.print(n1+","+n2);
+        for(int i=1;i<n;i++){
+            n3=n1+n2;
+             System.out.print(","+n3);
+            n1=n2;
+            n2=n3;
+           
+        }
+    }
+
     public static void main(String[] args) {
-        //Decimal_Binary();
-        //Decimal_Octal();
-        //Decimal_Hexa();
-        //Smallest_Factor();
-        Max_Factorof_Twoint();
+
+        FebonacciSerise();
         System.out.println("");
 
     }
