@@ -114,10 +114,28 @@ public class HelloApp {
         }
     }
 
-    public static void main(String[] args) {
+    static void insertionSort(int [] a) {
+        
 
-        bubbleSort();
-//        System.out.println("");
+        for (int i = 0; i <= a.length - 2; i++) {
+            if (a[i] <= a[i + 1]) {
+                continue;
+            }
+            int t = a[i + 1];
+            int j = i + 1;
+            while (j >= 1 && a[j - 1] > t) {
+                a[j] = a[j - 1];
+                j--;
+            }
+            a[j] = t;
+        }
+
+    }
+
+    public static void main(String[] args) {
+int a[] = {0, 2, 3, 4, 5, 1, -1};
+        insertionSort(a);
+        System.out.println(Arrays.toString(a));
 
     }
 }
