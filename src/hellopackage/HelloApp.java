@@ -5,73 +5,49 @@ import java.util.Scanner;
 
 public class HelloApp {
 
-    static void insertionSort(int[] a) {
+    static void array_mult() {
+        int a[] = {1, 2, 3, 4, 5, 5};
+        int sum = 1;
+        for (int i = 0; i < a.length; i++) {
 
-        for (int i = 0; i <= a.length - 2; i++) {
-            if (a[i] <= a[i + 1]) {
-                continue;
-            }
-            int t = a[i + 1];
-            int j = i + 1;
-            while (j >= 1 && a[j - 1] > t) {
-                a[j] = a[j - 1];
-                j--;
-            }
-            a[j] = t;
+            sum = sum * a[i];
+
         }
-
+        System.out.print(sum);
     }
 
-    static int multiplication(int a, int b) {
-        int mult = a * b;
-        return mult;
+    static void LCM() {
 
-    }
-
-    static void evenOdd(int a) {
-
-        if (a % 2 != 0) {
-            System.out.print("Odd ");
+        int a = 5, b = 10, c = 15;
+        int i;
+        int count = 0;
+        int n = a * b * c;
+        int min = 0;
+        if (a <= b && a <= c) {
+            min = a;
+        }
+        if (b <= c) {
+            min = b;
         } else {
-            System.out.print("Even ");
+            min = c;
         }
-    }
+        for (i = min; i <= n; i = i + min) {
 
-    static double average(int a, int b, int c) {
-        int sum = a + b + c;
-        double avg = sum / 3.0;
-        return avg;
+            count++;
+            if (i % a == 0 && i % b == 0 && i % c == 0) {
 
-    }
-
-    static void factorial(int num) {
-        int fact = 1;
-        if (num == 0) {
-            System.out.print("Number is Zero");
-        }
-        for (int i = 1; i <= num; i++) {
-            fact = fact * i;
+                System.out.printf("LCM = %s, Count=%s\n", i, count);
+                break;
+            }
 
         }
-        System.out.print(fact);
-
     }
 
     public static void main(String[] args) {
-        int a[]={1,2,3,4};
-        int i;
-        int temp;
-            temp=a[0];
-            a[0]=a[3];
-            a[3]=temp;
-        for(i=0;i<a.length;i++){
-            
-             System.out.print(a[i]+ ",");
 
-           
-        }
-       
-        
+        LCM();
+//        array_mult();
+
     }
 
 }
