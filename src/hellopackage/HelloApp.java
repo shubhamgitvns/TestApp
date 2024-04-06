@@ -42,11 +42,21 @@ public class HelloApp {
 
         }
     }
+      
+    static void count_Digit(){
+    int number=12377;
+    int count=0;
+    while(number > 0){
+        number/=10;
+        count++;
+        
+    }
+    System.out.println(count);
+}
 
     public static void main(String[] args) {
 
-        LCM();
-//        array_mult();
+       count_Digit();
 
     }
 
