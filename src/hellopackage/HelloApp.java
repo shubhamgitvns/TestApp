@@ -46,17 +46,67 @@ public class HelloApp {
     static void count_Digit(){
     int number=12377;
     int count=0;
+    
     while(number > 0){
         number/=10;
         count++;
-        
     }
+    
     System.out.println(count);
 }
+    
+     static void decimal_Hexa() {
+        int num = 1243, i = 0;
+        int hexaNum[] = new int[1000];
+        System.out.println("Decimal is: " + num);
+        System.out.print("Hexadecimal is: ");
+        if (num == 0) {
+            System.out.print("0");
+        }
+        while (num > 0) {
+            hexaNum[i] = num % 16;
+            num = num / 16;
+            i++;
+        }
+        for (int j = i - 1; j >= 0; j--) {
+            //System.out.print(hexaNum[j]);
+            if (hexaNum[j] == 10) {
+                System.out.println("A");
+
+            } else if (hexaNum[j] == 11) {
+                System.out.println("B");
+
+            } else if (hexaNum[j] == 12) {
+                System.out.println("C");
+
+            } else if (hexaNum[j] == 13) {
+                System.out.println("D");
+
+            } else if (hexaNum[j] == 14) {
+                System.out.println("E");
+
+            } else if (hexaNum[j] == 15) {
+                System.out.println("F");
+
+            } else {
+                System.out.print(hexaNum[j]);
+            }
+
+        }
+
+    }
+    
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What is your name: ");
+         String name = scanner.nextLine();
+         
+         System.out.println("name= "+ name);
 
-       count_Digit();
+        
+      
+       
 
     }
 
