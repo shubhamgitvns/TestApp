@@ -42,20 +42,20 @@ public class HelloApp {
 
         }
     }
-      
-    static void count_Digit(){
-    int number=12377;
-    int count=0;
-    
-    while(number > 0){
-        number/=10;
-        count++;
+
+    static void count_Digit() {
+        int number = 12377;
+        int count = 0;
+
+        while (number > 0) {
+            number /= 10;
+            count++;
+        }
+
+        System.out.println(count);
     }
-    
-    System.out.println(count);
-}
-    
-     static void decimal_Hexa() {
+
+    static void decimal_Hexa() {
         int num = 1243, i = 0;
         int hexaNum[] = new int[1000];
         System.out.println("Decimal is: " + num);
@@ -96,16 +96,28 @@ public class HelloApp {
 
     }
     
+    static void matrix_Mult(){
+        int a[][] = {{1, 1, 1}, {2, 2, 2}, {3, 3, 3}};
+        int b[][] ={{1,1,1}, {2,2,2}, {3,3,3}};
+        int c[][]=new int [3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                c[i][j]=0;
+                for(int k=0; k<3; k++){
+                    c[i][j]+=a[i][k]* b[i][k];
+                }
+                System.out.print(c[i][j] + " ");
+                
+            }
+            
+             System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("What is your name: ");
-         String name = scanner.nextLine();
-         
-         System.out.println("name= "+ name);
-
+//        Scanner scanner = new Scanner(System.in);
         
-      
+       matrix_Mult();
        
 
     }
